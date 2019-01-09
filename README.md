@@ -285,13 +285,15 @@ private repository to use.)
     them if you like, and click “Clone”. This should create a new
     PyCharm project and offer to open it for you. Say yes.
 
- 4. You should now be able to run Python programs. Go to the Project
-    pane, which should be open on the left side of the PyCharm window by
-    default. (If it's not there, you can get to it with Ctrl-1 [Windows]
-    or Cmd-1 [Mac].) Then navigate to the file `hello.py` (you may have
-    to uncollapse the `lab1` directory first) and double click to open
-    it in PyCharm's editor. You should see a Python program that looks
-    like this:
+ 4. You should now be able to run Python programs. PyCharm should
+    display a list of files in the Project pane on the left side of the
+    window by default. (If the Project pane isn’t there, you’ll have to
+    open it. Press Ctrl-Tab to get a list of available windows and
+    panes; then repeatedly release and press Tab, while keeping Ctrl
+    down, to cycle through the options.) Using the Project pane,
+    navigate to the file `hello.py` (you may have to uncollapse the
+    `lab1` directory first) and double click to open it in PyCharm's
+    editor. You should see a Python program that looks like this:
 
         #!/usr/bin/env python3
 
@@ -299,8 +301,10 @@ private repository to use.)
 
         print('Hello, ' + name + '!')
 
-    (At some point, PyCharm may ask if you want to install dependencies.
-    Say yes.)
+    (At several points, PyCharm may complain about problems, such as
+    there being no interpreter selected, or Mypy or dependencies being
+    missing. It will offer to solve the problems, and you should let
+    it.)
 
     To run the program, right-click anywhere in the editor window and
     choose the “Run 'hello'” option. A pane should open to show the

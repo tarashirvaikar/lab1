@@ -7,7 +7,6 @@ verify_ssl = true
 mypy = "==0.650"
 
 [packages]
-mypy = "*"
 
 [requires]
 python_version = "3.7"

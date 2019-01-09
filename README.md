@@ -20,7 +20,7 @@ We need to install and configure several pieces of software:
 The steps are detailed below.
 
 [PyCharm download]:
-    https://www.jetbrains.com/clion/download
+    https://www.jetbrains.com/pycharm/download/
 
 [PyCharm install]:
     https://www.jetbrains.com/help/pycharm/install-and-set-up-pycharm.html#install-PyCharm

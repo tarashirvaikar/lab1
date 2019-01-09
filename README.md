@@ -368,11 +368,11 @@ private repository to use.)
     file, which is the same as `hello.py` except for a *type annotation*
     on the `name` variable:
 
-        name: int = 'world'
-
-    Change the type, `int`, to `str` (which is wrong):
-
         name: str = 'world'
+
+    Change the type, `str`, to `int` (which is wrong):
+
+        name: int = 'world'
 
     It may take a few seconds after you make the change, but if Mypy is
     set up correctly, some parts of the program will soon become

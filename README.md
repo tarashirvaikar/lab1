@@ -44,10 +44,11 @@ We need to install and configure several pieces of software:
  1. Start downloading the [PyCharm installer][PyCharm download].
 
  2. If you don’t already have a GitHub account, go to [github.com] and
-    sign up for one.
+    sign up for one. (You will use GitHub to submit your homework.)
 
  3. Let us know your GitHub username by registering it
-    [here](http://goo.gl/forms/fjlXl51Lsq).
+    [here](http://goo.gl/forms/fjlXl51Lsq). (I need to know your GitHub
+    username so I know whose homework is whose.)
 
  4. Register for a student JetBrains account [on their
     website][JetBrains student]. Once the email arrives, follow the
@@ -254,89 +255,117 @@ PyCharm, make a small change, and then push your changes back to GitHub.
 (Note that for your homework, you **will not** fork, but will be given a
 private repository to use.)
 
-1. Go to the [lab repo page](https://github.com/eecs230/lab1) and click
-   “Fork” in the upper right. (If it asks where to fork it, choose your
-   GitHub account.) This will make a copy of the lab1 project in your
-   own GitHub account. You can see my forked copy at
-   [https://github.com/tov/lab1](https://github.com/tov/lab1). Yours
-   should look similar, but with your username in place of “tov”.
+ 1. Go to the [lab repo page](https://github.com/eecs230/lab1) and click
+    “Fork” in the upper right. (If it asks where to fork it, choose your
+    GitHub account.) This will make a copy of the lab1 project in your
+    own GitHub account. You can see my forked copy at
+    [https://github.com/tov/lab1](https://github.com/tov/lab1). Yours
+    should look similar, but with your username in place of “tov”.
 
-2. Above the file listing table, you should see a row of buttons
-   starting with “Branch: master ▾” and “New pull request”. On the far
-   right of that row, you should see a green button labeled “Clone or
-   download ▾.” Click this to open the menu; the title should be “Clone
-   with HTTPS.” (If it says “Clone with SSH” instead, click the “Use
-   HTTPS” link to the right to switch it.) The text in the box the below
-   is your repository URL, which identifies where to locate your code
-   when using other programs, such as CLion. Copy your repository URL to
-   the clipboard. Mine is `https://github.com/tov/lab1.git`, and yours
-   should be similar.
+ 2. Above the file listing table, you should see a row of buttons
+    starting with “Branch: master ▾” and “New pull request”. On the far
+    right of that row, you should see a green button labeled “Clone or
+    download ▾”. Click this to open the menu; the title should be “Clone
+    with HTTPS”. (If it says “Clone with SSH” instead, click the “Use
+    HTTPS” link to the right to switch it.) The text in the box the
+    below is your repository URL, which identifies where to locate your
+    code when using other programs, such as PyCharm or the Git
+    command-line tool. Copy your repository URL to the clipboard. Mine
+    is `https://github.com/tov/lab1.git`, and yours should be similar.
 
-3. Now that you have a URL for your own lab1 repository, you will
-   *clone* it in CLion, which makes a local copy that you can work with.
-   If you are on the initial CLion screen, which presents recently
-   opened files and four main options, choose the last option, “Check
-   out from Version Control”. (If you have a project open already then
-   you’ll find this option on the “VCS” menu.) Choose **Git**, **not
-   GitHub**, as the kind of repository. Paste your repo URL where it
-   asks for the “Git Repository URL”. The other options let you choose
-   where to put your local copy of the project; change them if you like,
-   and click “Clone”. This should create a new CLion project, which you
-   can open.
+ 3. Now that you have a URL for your own lab1 repository, you will
+    *clone* it in PyCharm, which makes a local copy that you can work
+    with. If you are on the initial PyCharm screen, which presents
+    recently opened files and three main options, choose the last
+    option, “Check out from Version Control ▾”. (If you have a project
+    open already then you’ll find this option on the “VCS” menu.) Choose
+    **Git**, **not GitHub**, as the kind of repository. Paste your repo
+    URL where it asks for the “Git Repository URL”. The other options
+    let you choose where to put your local copy of the project; change
+    them if you like, and click “Clone”. This should create a new
+    PyCharm project and offer to open it for you. Say yes.
 
-4.  You should now be able to build and run the lab1 project. Choose
-    “Run 'lab1'” or something like that from the “Run” menu. The program
-    should compile and run, printing the message
+ 4. You should now be able to run Python programs. Go to the Project
+    pane, which should be open on the left side of the PyCharm window by
+    default. (If it's not there, you can get to it with Ctrl-1 [Windows]
+    or Cmd-1 [Mac].) Then navigate to the file `hello.py` (you may have
+    to uncollapse the `lab1` directory first) and double click to open
+    it in PyCharm's editor. You should see a Python program that looks
+    like this:
 
-    ```
-    Hello, world!
-    ```
+        #!/usr/bin/env python3
 
-5.  Now we are going to make a small change to the program. (It’s okay
+        name = 'world'
+
+        print('Hello, ' + name + '!')
+
+    (At some point, PyCharm may ask if you want to install dependencies.
+    Say yes.)
+
+    To run the program, right-click anywhere in the editor window and
+    choose the “Run 'hello'” option. A pane should open to show the
+    results, which should look something like this:
+
+        /Users/tov/.local/share/virtualenvs/lab1--Ml6AzKP/bin/python /Users/tov/Desktop/lab1/hello.py
+        Hello, world!
+
+        Process finished with exit code 0
+
+    Once you've run the program once, it should appear in a menu of
+    program configurations in the upper-right. To re-run a program, you
+    can select it from that menu and then click the “play”
+    (green, right-pointing triangle) button.
+
+ 5. Now we are going to make a small change to the program. (It’s okay
     if you don’t understand what we’re doing here yet—I don’t expect you
-    to.) The lab1 project should contain a subdirectory `src`, which
-    contains a C++ source file `lab1.cpp`. Using the project browser
-    on the left, navigate to this file and open it. The entire text
-    of the file should read:
-
-    ```
-    #include <eecs230.h>
-
-    int main()
-    {
-        string name = "world";
-        cout << "Hello, " << name << "!\n";
-    }
-    ```
+    to.)
 
     Instead of greeting the world, modify the program to greet you. You
-    can do this by changing `"world"` to something else. For example, I
-    would change it to:
+    can do this by changing `'world'` to something else. For example, I
+    would change that line to:
 
-    ```
-        string name = "Jesse";
-    ```
+        name = 'Jesse'
 
     Run the program again and make sure your change worked.
 
-6. There are two steps involved in saving your changes using Git. The
-   first step is to *commit* your changes to the local repository, which
-   makes a new version locally. Then you need to *push* your changes to
-   the remote repository (GitHub). To do the former, select “Commit
-   Changes...” from the VCS menu. It will give you a chance to review
-   the changes and write a descriptive comment about the change before
-   committing. Then push to GitHub using the “Push...” command from the
-   “Git” submenu of the “VCS” menu.
+ 6. Next, we are going to test Mypy, which can checks your Python for
+    some kinds of errors without running it. Open the `hello_typed.py`
+    file, which is the same as `hello.py` except for a *type annotation*
+    on the `name` variable:
 
-7. Now your changes should be visible in your forked repository on
-   GitHub. Go back to your repo page, navigate to `src/lab1.cpp`, and
-   confirm that your name has replaced `"world"`.
+        name: int = 'world'
+
+    Change the type, `int`, to `str` (which is wrong):
+
+        name: str = 'world'
+
+    It may take a few seconds after you make the change, but if Mypy is
+    set up correctly, some parts of the program will soon become
+    highlighted to indicate warnings. Hovering over those highlights
+    will display the warning in a tooltip. For example, hovering over
+    the first occurence of `name` gives me this warning: “Mypy:
+    Incompatible types in assignment (expression has type "str",
+    variable has type "int")”. You should see something similar.
+
+ 7. There are two steps involved in saving your changes using Git. The
+    first step is to *commit* your changes to the local repository,
+    which makes a new version locally. Then you need to *push* your
+    changes to the remote repository (GitHub). To do the former, select
+    “Commit Changes...” from the VCS menu. It will give you a chance to
+    review the changes and write a descriptive comment about the change
+    before committing. Then push to GitHub using the “Push...” command
+    from the “Git” submenu of the “VCS” menu.
+
+ 8. Now your changes should be visible in your forked repository on
+    GitHub. Go back to your repo page, navigate to `hello.py`, and
+    confirm that your name has replaced `'world'`.
 
 ## Understanding Git
 
-Git is a source control tool that you’ll be learning more about later in
-this lab. In short, it keeps track of each version of your files, so
-that you can:
+Git is a *source control* tool. You may be unfamiliar with this concept,
+but most programmers consider source control to be essential to their
+work. In short, source control keeps track of each version of your
+files, so that you can:
 
   - Go back to any previous version. This is useful because it means
     that mistakes are easy to undo, and it’s safe to experiment.
@@ -353,9 +382,9 @@ that you can:
     you can copy the changes into the main (*master*) branch.
 
 GitHub is a service that hosts Git repositories (where all the versions
-are stored) online to facilitate collaboration. In particular, you will
-(probably) use GitHub when handing in your homework. Thus, you will need
-a GitHub account, and we will need to know your username:
+are stored) online to facilitate collaboration. We will be using GitHub
+for partner collaboration, homework submission, and possibly code
+reviews.
 
 If you have time remaining, start this interactive [git branching
 tutorial](http://pcottle.github.io/learnGitBranching/). If you run out

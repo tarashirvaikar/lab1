@@ -13,6 +13,10 @@ We need to install and configure several pieces of software:
   - PyCharm (an integrated development environment, which you will use
     to edit your programs)
 
+  - The Pip package manager
+
+  - Python packages `pipenv` and `mypy`
+
 [PyCharm download]:
     https://www.jetbrains.com/clion/download
 

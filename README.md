@@ -301,14 +301,39 @@ private repository to use.)
 
         print('Hello, ' + name + '!')
 
-    (At several points, PyCharm may complain about problems, such as
-    there being no interpreter selected, or Mypy or dependencies being
-    missing. It will offer to solve the problems, and you should let
-    it.)
+    When you open the file for the first time, PyCharm will complain
+    that some things aren't set up properly and offer to fix them for
+    you. In particular:
+
+      - It may say “No Python interpreter configured for the project“,
+        and give you the option to “Use Pipenv interpreter”. Go with
+        that.
+
+        (If it doesn't give you that option then it may be having
+        trouble finding the `pipenv` executable. In that case, ask your
+        TA.)
+
+      - Or, it may say “Pipenv interpreter is associated with another
+        project: …” and offer to “Fix Pipenv interpreter”. Do that.
+
+      - After that, it is quite likely to say something like “Package
+        requirements … are not satisfied” and offer to “Install
+        requirements from Pipfile.lock”. Do that too.
+
+      - Along the way, it may complain “Mypy Plugin: Mypy missing” and
+        offer to install it for you, or it may say something about an
+        “IDE Error”. In either case, ignore it! Once all requirements
+        are installed from `Pipfile.lock` (the previous bullet) then
+        these problems should go away.
 
     To run the program, right-click anywhere in the editor window and
-    choose the “Run 'hello'” option. A pane should open to show the
-    results, which should look something like this:
+    choose the “Run 'hello'” option. (If that option doesn't appear, it
+    means that PyCharm is still thinking, which is indicated by some
+    text in the status bar at the bottom of the Window. Wait it out and
+    try again.)
+
+    When you finally manage to run the program, a pane will open to show
+    the results. It should look something like this:
 
         /Users/tov/.local/share/virtualenvs/lab1--Ml6AzKP/bin/python /Users/tov/Desktop/lab1/hello.py
         Hello, world!

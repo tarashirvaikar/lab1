@@ -17,6 +17,8 @@ We need to install and configure several pieces of software:
 
   - Python packages `pipenv` and `mypy`
 
+The steps are detailed below.
+
 [PyCharm download]:
     https://www.jetbrains.com/clion/download
 
